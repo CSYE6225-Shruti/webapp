@@ -30,7 +30,9 @@ jobs:
           pwd
           ls
           mvn -B package --file pom.xml
+          pwd
           cd target
+          pwd
           ls -al
 
 
