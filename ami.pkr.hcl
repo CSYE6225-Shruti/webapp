@@ -79,7 +79,7 @@ build {
   }
 
   provisioner "file" {
-    source = "target/demo1-0.0.1-SNAPSHOT.jar"
+    source = "./"
     destination = "/home/ubuntu/"
   }
 }
