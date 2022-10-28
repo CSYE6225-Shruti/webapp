@@ -23,8 +23,6 @@ jobs:
         run: mvn compile
       - name: Test with Maven
         run: mvn test
-      - name: Maven clean
-        run: mvn clean
       - name: Package with Maven
         run: |
           pwd
@@ -34,6 +32,11 @@ jobs:
           cd target
           pwd
           ls -al
+          cp demo1-0.0.1-SNAPSHOT.jar /usr/webapps/
+          cd /usr/webapps/
+          pwd
+          ls -al
+          cd 
 
 
   packer_validate:

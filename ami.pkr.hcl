@@ -79,7 +79,7 @@ build {
   }
 
   provisioner "file" {
-    source = "demo1-0.0.1-SNAPSHOT.jar"
-    destination = "/usr/webapps/"
+    source = "target/demo1-0.0.1-SNAPSHOT.jar"
+    destination = "/home/ubuntu/"
   }
 }
