@@ -4,6 +4,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install nginx -y
 sudo apt-get clean
+
 sudo apt update
 sudo apt-get install openjdk-8-jdk -y
 sudo groupadd --system tomcat
@@ -23,20 +24,20 @@ sudo systemctl status tomcat.service
 ss -ltn
 sudo ufw allow from any to any port 8080 proto tcp
 
-sudo apt-cache search mysql-server
-sudo apt info -a mysql-server-8.0
-sudo apt-get install mysql-server-8.0 -y
-sudo systemctl is-enabled mysql.service
-sudo systemctl start mysql.service
-sudo systemctl status mysql.service
-export pwd=abc
-echo $pwd
-#export altercmd=\Alter user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Root@123'\
-#echo $altercmd
-sudo mysql -uroot -p$pwd --connect-expired-password -e "Alter user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Root@123'"
-sudo systemctl restart mysql.service
-sudo systemctl status mysql.service
-sudo mysql -uroot -pRoot@123 -e "CREATE DATABASE IF NOT EXISTS Csye6225WebServiceDB"
+#sudo apt-cache search mysql-server
+#sudo apt info -a mysql-server-8.0
+#sudo apt-get install mysql-server-8.0 -y
+#sudo systemctl is-enabled mysql.service
+#sudo systemctl start mysql.service
+#sudo systemctl status mysql.service
+#export pwd=abc
+#echo $pwd
+##export altercmd=\Alter user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Root@123'\
+##echo $altercmd
+#sudo mysql -uroot -p$pwd --connect-expired-password -e "Alter user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Root@123'"
+#sudo systemctl restart mysql.service
+#sudo systemctl status mysql.service
+#sudo mysql -uroot -pRoot@123 -e "CREATE DATABASE IF NOT EXISTS Csye6225WebServiceDB"
 
 sudo apt install maven -y
 

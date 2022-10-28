@@ -6,7 +6,8 @@ on:
       - 'assignment4'
       - 'main'
   pull_request:
-    branches: [ main ]
+    branches:
+      - 'main'
 jobs:
   package_build:
     runs-on: ubuntu-latest
@@ -24,6 +25,8 @@ jobs:
         run: mvn test
       - name: Package with Maven
         run: mvn -B package --file pom.xml
+      - name: build jar file
+        run: mvn packa
 
   packer_validate:
     runs-on: ubuntu-latest
