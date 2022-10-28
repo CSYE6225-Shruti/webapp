@@ -30,8 +30,8 @@ jobs:
           pwd
           ls
           mvn -B package --file pom.xml
-          pwd
-          ls
+          cd target
+          ls -al
 
 
   packer_validate:
