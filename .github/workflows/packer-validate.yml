@@ -28,7 +28,6 @@ jobs:
           ls
           mvn -B package --file pom.xml
           mkdir staging && cp target/*.jar staging
-          pwd
           ls -al
       - name: Upload jar file
         uses: actions/upload-artifact@v2
