@@ -68,6 +68,11 @@ source "amazon-ebs" "my-ami" {
 build {
   sources = ["source.amazon-ebs.my-ami"]
 
+  provisioner "file" {
+    source = "./"
+    destination = "/home/ubuntu/"
+  }
+
   provisioner "shell" {
     environment_vars = [
       "DEBIAN_FRONTEND=noninteractive",
@@ -78,8 +83,4 @@ build {
     ]
   }
 
-  provisioner "file" {
-    source = "./"
-    destination = "/home/ubuntu/"
-  }
 }

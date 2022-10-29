@@ -55,6 +55,8 @@ sudo useradd -d /opt/webapps -r -s /bin/false -g appmgr2 jvmapps2
 echo -e '\n[Unit]\nDescription=Manage JAVA service\n\n[Service]\nWorkingDirectory=/opt/webapps\nExecStart=/bin/java -jar /opt/webapps/demo1-0.0.1-SNAPSHOT.jar\nType=simple\nUser=jvmapps2\nGroup=appmgr2\nRestart=on-failure\nRestartSec=10\n\n[Install]\nWantedBy=multi-user.target\n' | sudo tee /etc/systemd/system/myapp.service
 sudo chown -R jvmapps2:appmgr2 /opt/webapps
 
+sudo pwd
+sudo ls -lrt
 
 sudo mvn clean install
 # shellcheck disable=SC2232
