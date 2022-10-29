@@ -1,10 +1,10 @@
 name: Run packer build on a template file
 
 on:
-  pull_request:
+  push:
     branches: [main]
 jobs:
-  package_build:
+  packagebuild:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
