@@ -62,7 +62,7 @@ sudo mvn clean install
 # shellcheck disable=SC2232
 sudo cd target
 sudo pwd
-sudo cp demo1-0.0.1-SNAPSHOT.jar /opt/webapps/.
+sudo cp /home/ubuntu/target/demo1-0.0.1-SNAPSHOT.jar /opt/webapps/.
 
 # shellcheck disable=SC2164
 cd /opt/webapps
