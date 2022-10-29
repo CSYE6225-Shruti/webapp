@@ -8,19 +8,17 @@ import com.neu.assignment.service.UserManagementService;
 
 import org.junit.Assert;
 
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static com.neu.assignment.Constants.getMockUserCreateRequest;
 import static com.neu.assignment.Constants.mockedUser;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 
-@RunWith(SpringRunner.class)
 public class UserManagementServiceTest {
     @InjectMocks
     UserManagementService userManagementService;
@@ -38,7 +36,7 @@ public class UserManagementServiceTest {
     FileHandlingRepo mockFileHandlingRepo;
 
 
-//    @Test
+    @Test
     public void createUserTest() {
         fileHandlingRepo = mock(FileHandlingRepo.class);
         generatePassword = mock(GeneratePassword.class);
