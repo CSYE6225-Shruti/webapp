@@ -3,10 +3,10 @@
   on:
     push:
       branches:
-        - 'main'
+        - main
     pull_request:
       branches:
-        - 'main'
+        - main
   jobs:
     package_build:
       runs-on: ubuntu-latest
