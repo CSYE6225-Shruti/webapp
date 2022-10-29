@@ -1,4 +1,4 @@
-  name: Run packer build on a template file
+  name: Run package build and packer validate on a template file
 
   on:
     push:
