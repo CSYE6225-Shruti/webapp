@@ -3,7 +3,6 @@
   on:
     push:
       branches:
-        - 'assignment5'
         - 'main'
     pull_request:
       branches:
