@@ -41,6 +41,10 @@ sudo ufw allow from any to any port 8080 proto tcp
 
 sudo apt install maven -y
 
+# shellcheck disable=SC2232
+sudo cd
+sudo pwd
+sudo ls -lrt
 sudo mkdir -p /opt/webapps
 sudo chmod 755 /opt/webapps
 
