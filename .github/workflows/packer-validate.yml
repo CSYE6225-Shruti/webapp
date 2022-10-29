@@ -29,7 +29,6 @@ jobs:
           ls
           mvn -B package --file pom.xml
           mkdir staging && cp target/*.jar staging
-          cd staging
           pwd
           ls -al
       - name: Upload jar file
