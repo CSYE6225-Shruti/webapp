@@ -28,6 +28,16 @@ jobs:
           pwd
           ls
           mvn -B package --file pom.xml
+          mkdir staging && cp target/*.jar staging
+          cd staging
+          pwd
+          ls -al
+      - name: Upload jar file
+        uses: actions/upload-artifact@v2
+        with:
+          name: webapp-artifact
+          path: staging
+
 
 
 
@@ -45,22 +55,3 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
-
-  packer_build:
-    name: Packer AMI Build
-    needs: packer_validate
-    runs-on: ubuntu-latest
-    steps:
-
-      - uses: actions/checkout@v2
-      - name: Packer build
-        uses: hashicorp/packer-github-actions@master
-        with:
-          templateFile: 'ami.pkr.hcl'
-          command: build
-        env:
-          PACKER_LOG: 1
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
-          AWS_DEFAULT_REGION: us-west-2
-

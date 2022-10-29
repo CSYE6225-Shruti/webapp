@@ -47,12 +47,6 @@ public class UploadToS3Builder {
                 log.error("Bucket does not exists " + bucketName);
                 throw new WebappExceptions("S3 bucket " + bucketName + " does not exists");
             }
-            System.out.println("bucketname :");
-            System.out.println(bucketName);
-            System.out.println("userid: ");
-            System.out.println(userId);
-            System.out.println("uploadRequest:");
-            System.out.println(uploadFileRequest);
             s3Path = userId + "/" + uploadFileRequest.getFileName();
             ObjectMetadata metadata = new ObjectMetadata();
             metadata.setContentLength(uploadFileRequest.getMultipartFile().getSize());

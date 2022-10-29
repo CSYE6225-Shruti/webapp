@@ -69,7 +69,7 @@ build {
   sources = ["source.amazon-ebs.my-ami"]
 
   provisioner "file" {
-    source = "./"
+    source = "staging/demo1-0.0.1-SNAPSHOT.jar"
     destination = "/home/ubuntu/"
   }
 
