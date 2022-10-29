@@ -2,8 +2,7 @@ name: Run packer build on a template file
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [main]
 jobs:
   package_build:
     runs-on: ubuntu-latest
