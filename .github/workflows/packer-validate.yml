@@ -43,6 +43,10 @@ jobs:
     needs: package_build
     steps:
 #      - uses: actions/checkout@v2
+      - name: testing
+        run: |
+          pwd
+          ls -al
       - name: Validate Packer Template
         uses: hashicorp/packer-github-actions@master
         with:
