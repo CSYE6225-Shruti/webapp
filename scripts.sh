@@ -39,7 +39,7 @@ sudo ufw allow from any to any port 8080 proto tcp
 #sudo systemctl status mysql.service
 #sudo mysql -uroot -pRoot@123 -e "CREATE DATABASE IF NOT EXISTS Csye6225WebServiceDB"
 
-sudo apt install maven -y
+#sudo apt install maven -y
 
 # shellcheck disable=SC2232
 sudo cd
@@ -58,11 +58,11 @@ sudo chown -R jvmapps2:appmgr2 /opt/webapps
 sudo pwd
 sudo ls -lrt
 
-sudo mvn clean install
+#sudo mvn clean install
 # shellcheck disable=SC2164
-cd target
+
 sudo pwd
-sudo cp /home/ubuntu/target/demo1-0.0.1-SNAPSHOT.jar /opt/webapps/.
+sudo cp /home/ubuntu/demo1-0.0.1-SNAPSHOT.jar /opt/webapps/.
 
 # shellcheck disable=SC2164
 cd /opt/webapps

@@ -25,14 +25,6 @@ jobs:
           ls
           mvn -B package --file pom.xml
 
-
-
-  packer_validate:
-    runs-on: ubuntu-latest
-    name: Validate Packer template
-    needs: package_build
-    steps:
-      - uses: actions/checkout@v2
       - name: Validate Packer Template
         uses: hashicorp/packer-github-actions@master
         with:
@@ -42,13 +34,6 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
 
-  packer_build:
-    name: Packer AMI Build
-    needs: packer_validate
-    runs-on: ubuntu-latest
-    steps:
-
-      - uses: actions/checkout@v2
       - name: Download jar file
         uses: actions/download-artifact@v2
         with:
