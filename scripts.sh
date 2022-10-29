@@ -55,10 +55,19 @@ sudo useradd -d /opt/webapps -r -s /bin/false -g appmgr2 jvmapps2
 echo -e '\n[Unit]\nDescription=Manage JAVA service\n\n[Service]\nWorkingDirectory=/opt/webapps\nExecStart=/bin/java -jar /opt/webapps/demo1-0.0.1-SNAPSHOT.jar\nType=simple\nUser=jvmapps2\nGroup=appmgr2\nRestart=on-failure\nRestartSec=10\n\n[Install]\nWantedBy=multi-user.target\n' | sudo tee /etc/systemd/system/myapp.service
 sudo chown -R jvmapps2:appmgr2 /opt/webapps
 
+
+sudo mvn clean install
+# shellcheck disable=SC2232
+sudo cd target
+sudo pwd
+sudo cp demo1-0.0.1-SNAPSHOT.jar /opt/webapps/.
+
 # shellcheck disable=SC2164
 cd /opt/webapps
+sudo pwd
+ls -lrt
 
-sudo wget https://csye6225-shruti.s3.us-west-2.amazonaws.com/demo1-0.0.1-SNAPSHOT.jar
+#sudo wget https://csye6225-shruti.s3.us-west-2.amazonaws.com/demo1-0.0.1-SNAPSHOT.jar
 sudo chmod 755 demo1-0.0.1-SNAPSHOT.jar
 sudo systemctl daemon-reload
 sudo systemctl start myapp.service
