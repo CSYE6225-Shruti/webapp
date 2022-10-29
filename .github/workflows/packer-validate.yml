@@ -28,25 +28,22 @@ jobs:
           pwd
           ls
           mvn -B package --file pom.xml
-          mkdir /staging && cp target/*.jar /staging
-          cd /staging
+          mkdir staging && cp target/*.jar staging
+          cd staging
           pwd
           ls -al
       - name: Upload jar file
         uses: actions/upload-artifact@v2
         with:
           name: webapp-artifact
-          path: /staging
-
-
-
+          path: staging
 
   packer_validate:
     runs-on: ubuntu-latest
     name: Validate Packer template
     needs: package_build
     steps:
-      - uses: actions/checkout@v2
+#      - uses: actions/checkout@v2
       - name: Validate Packer Template
         uses: hashicorp/packer-github-actions@master
         with:
@@ -63,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v2
+#      - uses: actions/checkout@v2
       - name: Download jar file
         uses: actions/download-artifact@v2
         with:
