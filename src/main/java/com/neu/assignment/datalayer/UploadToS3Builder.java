@@ -35,6 +35,7 @@ public class UploadToS3Builder {
     public String uploadFile(String bucketName, String userId, UploadFileRequest uploadFileRequest) {
         System.out.println("in upload to s3 bucket code");
         String s3Path = null;
+
         System.out.println("bucketname b4:");
         System.out.println(bucketName);
         try {
