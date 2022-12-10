@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 public class AssignmentApplication {
 
     public static void main(String[] args) {
-
+        System.out.println("inside main");
         SpringApplication.run(AssignmentApplication.class, args);
 
         /* code use to generate salt */
